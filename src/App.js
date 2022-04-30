@@ -2,12 +2,12 @@ import Header from './component/header';
 import Fooditem from './component/fooditem';
 import Billingamount from './component/billingamount';
 import data from './component/data';
-import { useState ,useEffect} from 'react';
-
+import { useState, useEffect } from 'react';
 
 function App() {
   const {products} = data;
-  const [cartItems,setcartItems] = useState([]);
+  const cartHistory = localStorage.getItem('cart-history');
+  const [cartItems, setcartItems] = useState(cartHistory === null ? [] : JSON.parse(cartHistory));
   const onAdd = (product) =>{
     const exist = cartItems.find(x => x.id === product.id);
     if (exist){
@@ -28,9 +28,11 @@ function App() {
       );
     }
   }
-  
+  useEffect(() => {
+    localStorage.setItem('cart-history', JSON.stringify(cartItems));
+  });
   return (
-    <div className="App">
+    <div className="app">
       <Header countCartItems={cartItems.length}> </Header>
       <div className='row'>
         <Fooditem onAdd={onAdd} products={products}></Fooditem>
@@ -40,9 +42,6 @@ function App() {
       </div>
     </div>
   );
- 
-
-
 }
 
 export default App;

@@ -2,6 +2,7 @@ import React from 'react'
 
 function Header(props) {
   const {countCartItems} = props;
+  
   return (
     <header className="row block center">
         <div>
@@ -18,7 +19,10 @@ function Header(props) {
                ) : ('')
               }
 
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> <a href='#/signin'>Order History</a>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> 
+                  <a href='#/Order'>
+                    Order History
+                  </a>
             
         </div>
     </header>

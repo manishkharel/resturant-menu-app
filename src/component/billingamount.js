@@ -7,6 +7,7 @@ function Billingamount(props) {
   const taxPrice = itemPrice * 0.13;
   const shippingPrice = itemPrice > 2000 ? 0 : 50;
   const totalPrice = itemPrice + taxPrice +shippingPrice;
+ 
   return (
     <aside className=" block col-1">
         <h2>Cart Items</h2>
@@ -49,7 +50,8 @@ function Billingamount(props) {
           </div>
           <hr/>
           <div className='row'>
-            <button onClick={() => {alert("checkout successful"); window.location.reload();}}>
+            <button onClick={() => {alert("checkout successful"); window.location.reload();
+              localStorage.clear();}}>
               Checkout
             </button>
           </div>
