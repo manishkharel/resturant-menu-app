@@ -50,8 +50,12 @@ function Billingamount(props) {
           </div>
           <hr/>
           <div className='row'>
-            <button onClick={() => {alert("checkout successful"); window.location.reload();
-              localStorage.clear();}}>
+            <button onClick={() => {
+              alert("checkout successful"); 
+              window.location.reload();
+              let historyData = localStorage.getItem('cart-history');
+              localStorage.clear();
+              }}>
               Checkout
             </button>
           </div>

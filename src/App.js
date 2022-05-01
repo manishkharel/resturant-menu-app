@@ -34,12 +34,15 @@ function App() {
   return (
     <div className="app">
       <Header countCartItems={cartItems.length}> </Header>
-      <div className='row'>
+      <div className=''>
         <Fooditem onAdd={onAdd} products={products}></Fooditem>
         <Billingamount onAdd={onAdd} 
         onRemove={onRemove} 
         cartItems={cartItems}> </Billingamount>
       </div>
+      {/* <div className=''>
+        <History></History>
+      </div> */}
     </div>
   );
 }

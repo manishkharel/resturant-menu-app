@@ -5,10 +5,8 @@ function Header(props) {
   
   return (
     <header className="row block center">
-        <div>
-            <a href='#/'>
+        <div className='heading'>
                 <h1> Mizori Cafe</h1>
-            </a>
         </div>
         <div>
             <a href='#/cart'>
