@@ -53,7 +53,6 @@ function Billingamount(props) {
             <button onClick={() => {
               alert("checkout successful"); 
               window.location.reload();
-              let historyData = localStorage.getItem('cart-history');
               localStorage.clear();
               }}>
               Checkout

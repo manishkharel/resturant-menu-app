@@ -40,9 +40,6 @@ function App() {
         onRemove={onRemove} 
         cartItems={cartItems}> </Billingamount>
       </div>
-      {/* <div className=''>
-        <History></History>
-      </div> */}
     </div>
   );
 }
